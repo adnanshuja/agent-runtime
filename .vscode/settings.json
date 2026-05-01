@@ -1,13 +1,5 @@
 {
-  "github.copilot.chat.codeGeneration.instructions": [
-    {
-      "text": "Follow the LLM Execution Protocol. Default mode: STRICT. See .vscode/llm-execution-protocol.code-snippets for mode selection and protocol reference."
-    }
-  ],
-  "cody.chat.preInstruction": "Follow the LLM Execution Protocol. Default mode: STRICT. See .vscode/llm-execution-protocol.code-snippets for protocol reference.",
-  "github.copilot.chat.testGeneration.instructions": [
-    {
-      "text": "Write tests before implementation. Verify the test fails first, then implement, then confirm the test passes. Follow protocol Stage 4 (Plan with verification) and Stage 6 (Verification)."
-    }
-  ]
+  "github.copilot.chat.codeGeneration.instructions": [{"text":"Disciplined Agents framework. Default: STRICT. Before every task: CLASSIFY(type+risk) → SELECT MODE(STRICT/FAST/DEBUG) → EXECUTE 6 stages → ENFORCE R1-R8 → SCORE(C/M/A/V). Key: minimal diffs, no speculation, verify before done."}],
+  "cody.chat.preInstruction": "Disciplined Agents framework. Default STRICT. CLASSIFY → MODE → 6 STAGES → R1-R8 → SCORE.",
+  "github.copilot.chat.testGeneration.instructions": [{"text":"Test before implementation. Verify fail → implement → verify pass. Follow protocol S4(plan with verification) + S6(verification)."}]
 }

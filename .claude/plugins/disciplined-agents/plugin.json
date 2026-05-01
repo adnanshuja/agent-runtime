@@ -1,0 +1,32 @@
+{
+  "name": "disciplined-agents",
+  "version": "2.0.0",
+  "description": "Deterministic execution framework for LLM code generation",
+  "author": "Disciplined Agents",
+  "priority": "high",
+  "alwaysOn": false,
+  "triggers": [
+    "Use Disciplined Agents",
+    "Use STRICT mode",
+    "Use FAST mode",
+    "Use DEBUG mode",
+    "Disciplined Agents:"
+  ],
+  "modules": {
+    "core": "core.md",
+    "modes": "modes.md",
+    "context": "context.md",
+    "enforcement": "enforcement.md"
+  },
+  "activation": {
+    "type": "trigger",
+    "requireExplicitInvocation": true
+  },
+  "dependencies": [],
+  "hooks": {
+    "preTask": {
+      "enabled": false,
+      "purpose": "Classification gate — currently manual. Set enabled: true to auto-classify every task."
+    }
+  }
+}

@@ -1,53 +1,19 @@
-# LLM Execution Protocol + Antigravity
+# Disciplined Agents + Antigravity
 
-Antigravity is an agent orchestration platform for managing coding agents across workflows.
-This integration adds the LLM Execution Protocol as a guardrail layer for all Antigravity-managed agents.
+Rule at `.antigravity/rules/llm-execution-protocol.mdc`. Copy to another project: `cp .antigravity/rules/llm-execution-protocol.mdc /path/to/project/.antigravity/rules/`.
 
----
-
-## Setup
-
-The rule at `.antigravity/rules/llm-execution-protocol.mdc` is committed.
-Antigravity reads it automatically when this repo is loaded.
-
-**In another project:**
-```bash
-cp .antigravity/rules/llm-execution-protocol.mdc /path/to/your/project/.antigravity/rules/
-```
-
----
-
-## Agent Configuration
-
+Configure agent:
 ```yaml
-# .antigravity/agents/coding-agent.yaml
-name: coding-agent
-model: claude-opus-4
 protocol:
   source: .antigravity/rules/llm-execution-protocol.mdc
-  mode: strict
-  enforcement:
-    - no_unrelated_changes
-    - no_speculative_code
-    - verification_required
+  mode: strict  # strict | fast | debug
+  enforcement: all
 ```
 
----
-
-## Mode Override Per Task
-
+Mode override per task:
 ```yaml
 task:
-  id: fix-login-bug-342
-  protocol_mode: debug
-  description: "Users report 500 error on login with special characters"
+  protocol_mode: debug  # overrides default for this task
 ```
 
-This overrides the agent's default mode for this task only.
-
----
-
-## Verification
-
-Antigravity agents log self-evaluation scores after each task.
-See `core/self-evaluation.md` for scoring details.
+Scorecard results feed into Antigravity observability. See `core/scorecard.md`.

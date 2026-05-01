@@ -1,35 +1,14 @@
 ---
-description: LLM Execution Protocol — structured execution protocol for Antigravity-managed coding agents. Enforces assumptions, interpretations, plans, and verification before implementation.
-alwaysApply: true
+description: Disciplined Agents — deterministic execution framework for Antigravity agents
+alwaysApply: false
+priority: high
 ---
 
-# LLM Execution Protocol (Antigravity)
+# Disciplined Agents — Execution engine, not guidelines.
 
-This protocol applies to all coding tasks managed by Antigravity agents.
-
-## Default Mode: STRICT
-
-### Classification
-Every task must be classified before execution:
-- Task type: BUG_FIX | FEATURE | REFACTOR | EXPLORATION
-- Risk level: LOW | MEDIUM | HIGH
-- Mode: STRICT | FAST | DEBUG
-
-### Protocol (6 Stages)
-1. Assumptions — list all, verify uncertain ones
-2. Interpretations — ≥2 alternatives, surface differences
-3. Decision — choose with justification, reject alternatives
-4. Plan — ordered steps, each with verification criterion
-5. Implementation — one step at a time, no side effects
-6. Verification — tests, linters, unrelated changes check
-
-### Enforcement
-- R1: Only task-related lines changed
-- R2: No unused abstractions
-- R3: Match existing code style
-- R5: Tests must pass before reporting done
-- R6: >50 line diffs require line-by-line justification
-- R8: All changes must be revertible
-
-### Self-Evaluation
-Post-task: score correctness (3x), minimality (2x), assumption accuracy (2x), process compliance (2x), verification (1x). Fail if weighted < 7 or any < 4.
+## Activation
+1. CLASSIFY: type(BUG_FIX|FEATURE|REFACTOR|EXPLORATION) + risk(LOW|MED|HIGH)
+2. MODE: STRICT(default) | FAST(LOW only) | DEBUG(investigation)
+3. EXECUTE: S1 assumptions(min 3) → S2 interpretations(2+) → S3 decision+justify → S4 plan+backout → S5 impl(minimal) → S6 verify(tests+linters+diffs)
+4. ENFORCE R1-R8: unrelated→reject, speculative→reject, match style, no injection, verify, diff caps, declare deps, rollback
+5. SCORE C(3x)+M(2x)+A(2x)+V(1x). FAIL if any<4 or weighted<7.

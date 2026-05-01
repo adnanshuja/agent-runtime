@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(rm -f \"D:/projects/andrej-karpathy-skills/.claude/plugins/disciplined-agents/plugin.json\")",
+      "Bash(mkdir -p \"D:/projects/andrej-karpathy-skills/.claude/plugins/disciplined-agents\")"
     ]
   }
 }
