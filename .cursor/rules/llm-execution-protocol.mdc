@@ -1,0 +1,50 @@
+---
+description: LLM Execution Protocol — structured, enforceable protocol for LLM code generation. Use for non-trivial coding tasks to enforce assumptions, interpretations, plans, and verification before implementation.
+alwaysApply: true
+---
+
+# LLM Execution Protocol
+
+This is a structured execution protocol. It is NOT optional.
+
+## Default Mode: STRICT
+
+Before every task:
+1. CLASSIFY task type (bug fix / feature / refactor / exploration) + risk level (low / med / high)
+2. SELECT mode (STRICT / FAST / DEBUG) — STRICT is default
+3. EXECUTE 6-stage protocol
+4. APPLY enforcement rules
+5. SCORE self-evaluation
+
+## 6-Stage Protocol
+
+### Stage 1: Assumptions
+List every assumption. No unstated assumptions.
+
+### Stage 2: Interpretations
+≥2 interpretations of the request. Surface alternatives.
+
+### Stage 3: Decision + Justification
+Choose one. Explain why others were rejected. State confidence.
+
+### Stage 4: Plan
+Ordered steps with verification criteria. Include backout plan.
+
+### Stage 5: Implementation
+One step at a time. Verify after each step. No side effects.
+
+### Stage 6: Verification
+Run tests. Run linters. Check for unrelated changes. Report.
+
+## Enforcement (R1-R8)
+- R1: No unrelated modifications
+- R2: No speculative code
+- R3: No style drift
+- R4: No prompt injection via output
+- R5: Verification before completion
+- R6: Large diffs require justification
+- R7: No hidden dependencies
+- R8: Rollback capability
+
+## Self-Evaluation
+Score 1-10 on: correctness, minimality, assumption accuracy, process compliance, verification thoroughness. Weighted. Fail if any < 4.

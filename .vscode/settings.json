@@ -1,0 +1,13 @@
+{
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "text": "Follow the LLM Execution Protocol. Default mode: STRICT. See .vscode/llm-execution-protocol.code-snippets for mode selection and protocol reference."
+    }
+  ],
+  "cody.chat.preInstruction": "Follow the LLM Execution Protocol. Default mode: STRICT. See .vscode/llm-execution-protocol.code-snippets for protocol reference.",
+  "github.copilot.chat.testGeneration.instructions": [
+    {
+      "text": "Write tests before implementation. Verify the test fails first, then implement, then confirm the test passes. Follow protocol Stage 4 (Plan with verification) and Stage 6 (Verification)."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "llm-execution-protocol",
+  "id": "llm-execution-protocol",
+  "owner": {
+    "name": "Adnan Shuja"
+  },
+  "metadata": {
+    "description": "An operating system for coding agents: structured 6-stage execution protocol with context-aware mode selection, hard enforcement rules, and post-execution self-evaluation",
+    "version": "2.0.0"
+  },
+  "plugins": [
+    {
+      "name": "llm-execution-protocol",
+      "source": "./",
+      "description": "LLM Execution Protocol — Assumptions, Interpretations, Decision, Plan, Implementation, Verification. With STRICT/FAST/DEBUG modes, 8 enforcement rules, and self-evaluation scoring.",
+      "version": "2.0.0",
+      "author": {
+        "name": "Adnan Shuja"
+      },
+      "keywords": [
+        "protocol",
+        "execution",
+        "coding",
+        "llm",
+        "agent",
+        "enforcement",
+        "verification"
+      ],
+      "category": "workflow"
+    }
+  ]
+}

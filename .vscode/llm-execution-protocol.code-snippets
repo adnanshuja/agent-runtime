@@ -1,0 +1,87 @@
+{
+  "LLM Execution Protocol - STRICT Mode": {
+    "prefix": "lep-strict",
+    "body": [
+      "Use LLM Execution Protocol in STRICT mode.",
+      "",
+      "## Classification",
+      "Task type: $1",
+      "Risk level: $2",
+      "",
+      "## Protocol",
+      "1. Assumptions: ${3:list assumptions}",
+      "2. Interpretations: ${4:≥2 alternatives}",
+      "3. Decision: ${5:choose + justify}",
+      "4. Plan: ${6:steps with verification}",
+      "5. Implementation: ${7:execute plan}",
+      "6. Verification: ${8:run tests, check diffs}",
+      "",
+      "## Enforcement",
+      "- No unrelated changes",
+      "- No speculative code",
+      "- No style drift",
+      "- Tests must pass"
+    ],
+    "description": "Insert STRICT mode protocol template"
+  },
+  "LLM Execution Protocol - FAST Mode": {
+    "prefix": "lep-fast",
+    "body": [
+      "Use FAST mode. Low risk task.",
+      "",
+      "## Classification",
+      "Type: $1 | Risk: LOW",
+      "",
+      "## Protocol (abbreviated)",
+      "Assumptions: ${2:critical ones only}",
+      "Plan: ${3:minimum steps}",
+      "Verify: ${4:quick check}",
+      "",
+      "## Constraint",
+      "No unrelated changes. No speculative code."
+    ],
+    "description": "Insert FAST mode protocol template"
+  },
+  "LLM Execution Protocol - DEBUG Mode": {
+    "prefix": "lep-debug",
+    "body": [
+      "Use DEBUG mode. Root cause investigation.",
+      "",
+      "## Bug Reproduction",
+      "Steps: $1",
+      "Frequency: $2",
+      "",
+      "## Hypothesis Tree",
+      "H1: ${3:first hypothesis}",
+      "H2: ${4:second hypothesis}",
+      "H3: ${5:third hypothesis}",
+      "",
+      "## Elimination",
+      "- Probe for H1: ${6:result}",
+      "- Probe for H2: ${7:result}",
+      "- Probe for H3: ${8:result}",
+      "",
+      "## Root Cause",
+      "${9:confirmed cause}",
+      "",
+      "## Fix + Verify",
+      "${10:implement fix, confirm test passes}"
+    ],
+    "description": "Insert DEBUG mode protocol template"
+  },
+  "LLM Execution Protocol - Stage Reminder": {
+    "prefix": "lep-stage",
+    "body": [
+      "## Protocol Stage Check",
+      "- [ ] Stage 1: Assumptions listed",
+      "- [ ] Stage 2: ≥2 interpretations",
+      "- [ ] Stage 3: Decision + justification",
+      "- [ ] Stage 4: Plan with verification",
+      "- [ ] Stage 5: Implementation (one step at a time)",
+      "- [ ] Stage 6: Verification complete",
+      "- [ ] Enforcement: No violations (R1-R8)",
+      "- [ ] Self-evaluation: Score ≥ 7, no dimension < 4"
+    ],
+    "description": "Insert protocol stage checklist"
+  }
+}
