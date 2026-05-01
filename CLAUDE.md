@@ -1,15 +1,11 @@
 # Disciplined Agents — v3.0.0 — Execution Discipline System
 
 ## Activation (do before every task)
-1. CLASSIFY -> context/classifier.md          (type + risk + heuristics)
-2. MODE    -> modes/strict.md | fast.md | debug.md
-3. PIPELINE -> core/pipeline.md              (8 stages: S0-S7)
-4. GATES   -> core/gates.md                  (H1-H8 hard constraints)
-5. ENFORCE -> enforcement/diff-discipline-engine.md  (R1-R8)
-6. JUSTIFY -> enforcement/per-change-justification.md (justify per hunk)
-7. REJECT  -> enforcement/rejection-protocol.md  (structured rejection)
-8. TRACE   -> trace/output-contract.md       (JSON execution record)
-9. SCORE   -> core/scorecard.md              (C/M/A/U/V)
+Execute `core/execution-engine.md` — the single entry point for all agent behavior.
+
+The engine orchestrates: classification → mode selection → pipeline (S0-S7) → gates (H1-H8) → diff discipline (R1-R8) → validation gate → structured output + trace.
+
+All modules are subordinate. Do not invoke modules directly.
 
 ## Quick Reference
 CLASSIFY: [BUG FIX|FEATURE|REFACTOR|EXPLORATION] + [LOW|MED|HIGH] + heuristics
